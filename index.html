@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Eduardo Cavazos Quintero</title>
-<meta name="description" content="Eduardo (Eddy) Cavazos Quintero, MIT aerospace engineering student: aerodynamics responsible engineer on MIT Motorsports and UROP researcher at the Wright Brothers Wind Tunnel. CFD, aero design reviews, composites.">
+<meta name="description" content="Eduardo (Eddy) Cavazos Quintero, MIT aerospace engineering student: aerodynamics responsible engineer on MIT Motorsports, turbine responsible engineer on MIT&#x27;s Sustainable Engine Team, and UROP researcher at the Wright Brothers Wind Tunnel. CFD, FEA, aero design reviews, composites.">
 <meta name="author" content="Eduardo Cavazos Quintero">
 <link rel="canonical" href="https://eduardocavazosq.github.io/">
 <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0E1013" media="(prefers-color-scheme: dark)">
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Eduardo Cavazos Quintero">
-<meta property="og:description" content="Eduardo (Eddy) Cavazos Quintero, MIT aerospace engineering student: aerodynamics responsible engineer on MIT Motorsports and UROP researcher at the Wright Brothers Wind Tunnel. CFD, aero design reviews, composites.">
+<meta property="og:description" content="Eduardo (Eddy) Cavazos Quintero, MIT aerospace engineering student: aerodynamics responsible engineer on MIT Motorsports, turbine responsible engineer on MIT&#x27;s Sustainable Engine Team, and UROP researcher at the Wright Brothers Wind Tunnel. CFD, FEA, aero design reviews, composites.">
 <meta property="og:url" content="https://eduardocavazosq.github.io/">
 <meta property="og:image" content="https://eduardocavazosq.github.io/assets/img/og.jpg">
 <meta property="og:image:width" content="1200">
@@ -214,6 +214,54 @@ figcaption{margin-top:8px;font-size:var(--s-cap);line-height:1.45;color:var(--in
 .slides{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px 14px;margin-top:32px}
 .slides figure{margin:0;min-width:0}
 
+/* project index under the Work heading */
+.toc{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.toc a{font-size:var(--s-cap);line-height:1.3;color:var(--ink-2);text-decoration:none;border:1px solid var(--rule-2);border-radius:20px;padding:5px 12px;white-space:nowrap}
+.toc a:hover{color:var(--ink);border-color:var(--ink-3)}
+
+/* a sub-part inside a sheet (turbine: worksheet check, then CAD and FEA) */
+.part-head{margin-top:44px;display:grid;gap:8px;max-width:72ch}
+.part-head h4{font-size:var(--s-h4);font-weight:600}
+.part-head p{color:var(--ink-2);font-size:var(--s-sm)}
+.part-head + .figs,.part-head + .table-wrap{margin-top:20px}
+.table-wrap + .figs{margin-top:26px}
+
+/* a figure beside a table */
+.pair{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:16px clamp(24px,3.5vw,44px);align-items:start}
+.figs .pair{margin-top:2px}
+.pair>figure{margin:0;min-width:0}
+.pair-draw{margin-top:32px;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+
+/* data tables */
+.table-wrap{overflow-x:auto;min-width:0}
+.data{width:100%;border-collapse:collapse;font-size:var(--s-sm);line-height:1.45;font-variant-numeric:tabular-nums lining-nums}
+.data caption{caption-side:top;text-align:left;font-size:var(--s-cap);color:var(--ink-3);padding-bottom:10px;line-height:1.45}
+.data th,.data td{padding:9px 16px 9px 0;border-bottom:1px solid var(--rule);text-align:left;vertical-align:top}
+.data tr>:last-child{padding-right:0}
+.data thead th{font-size:var(--s-cap);font-weight:500;color:var(--ink-3);border-bottom:1px solid var(--rule-2);white-space:nowrap;vertical-align:bottom}
+.data tbody th{font-weight:500;color:var(--ink)}
+.data td{color:var(--ink-2)}
+.data .n{text-align:right;white-space:nowrap}
+.data .hi{color:var(--accent);font-weight:600}
+
+/* inline drawing (WBWT test section) */
+.drawing{margin:0;padding:clamp(10px,2vw,18px);border:1px solid var(--rule);border-radius:2px;background:var(--paper)}
+.drawing svg{display:block;width:100%;height:auto}
+.drawing text{font-family:var(--f-text);font-size:20px;fill:var(--ink-2)}
+.drawing .w-big{font-size:23px;font-weight:600;fill:var(--ink)}
+.drawing .w-acc{fill:var(--accent)}
+.drawing .w-area{fill:var(--wash);stroke:var(--ink);stroke-width:2}
+.drawing .w-fillet{fill:var(--rule-2)}
+.drawing .w-exit{fill:none;stroke:var(--accent);stroke-width:2;stroke-dasharray:6 5}
+.drawing .w-cl{fill:none;stroke:var(--ink-3);stroke-width:1;stroke-dasharray:14 4 3 4}
+.drawing .w-model{fill:var(--ink-2)}
+.drawing .w-span{fill:none;stroke:var(--accent);stroke-width:1.5}
+.drawing .w-span-x{fill:none;stroke:var(--accent);stroke-width:1;stroke-dasharray:3 4}
+.drawing .w-dim{fill:none;stroke:var(--ink-3);stroke-width:1.2}
+.drawing .w-halo{paint-order:stroke;stroke:var(--wash);stroke-width:8px;stroke-linejoin:round}
+.nw{white-space:nowrap}
+.elements tbody th{white-space:nowrap}
+
 /* ---------- scene browser ---------- */
 .viewer-head{margin-top:40px;display:grid;gap:8px;max-width:68ch}
 .viewer-head h4{font-size:var(--s-h4);font-weight:600}
@@ -319,6 +367,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 2
   .sheet-grid{grid-template-columns:1fr}
   .build{grid-template-columns:1fr}
   .slides{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .pair,.pair-draw{grid-template-columns:1fr}
   .viewer{grid-template-columns:1fr}
   .scenes{flex-direction:row;overflow-x:auto;gap:8px;padding-bottom:6px;scroll-snap-type:x proximity}
   .scene-group{display:none}
@@ -343,6 +392,9 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 2
   .slides figure{flex:none;width:82%;scroll-snap-align:start}
   .lb-stage{grid-template-columns:minmax(0,1fr)}
   .lb-stage .lb-prev,.lb-stage .lb-next{display:none}
+  .drawing{padding:8px}
+  .drawing text{font-size:22px}
+  .drawing .w-big{font-size:25px}
 }
 @media (max-width:420px){
   .facts{grid-template-columns:1fr}
@@ -363,6 +415,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 2
     <a class="mark" href="#top" aria-label="Eduardo Cavazos Quintero, back to top"><span class="full">Eduardo Cavazos Quintero</span><span class="short">ECQ</span></a>
     <nav class="nav" aria-label="Sections">
       <a href="#work">Work</a>
+      <a href="#turbine-tunnel">Turbine &amp; tunnel</a>
       <a href="#build">Build</a>
       <a href="#experience">Experience</a>
       <a href="#skills">Skills</a>
@@ -385,7 +438,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 2
   <div class="wrap">
     <div>
       <h1 id="name"><span>Eduardo</span> <span>Cavazos</span> <span>Quintero</span></h1>
-      <p class="lead">I'm Eddy, an aerospace engineering student at MIT. On MIT Motorsports I'm the <strong>responsible engineer for the rear wing, active aero, and sidepods</strong>. I built and validated the team's radiator CFD model and trained the aero team on STAR-CCM+. At MIT's Wright Brothers Wind Tunnel, I'm implementing wall-interference and blockage corrections.</p>
+      <p class="lead">I'm Eddy, an aerospace engineering student at MIT. On MIT Motorsports I'm the <strong>responsible engineer for the rear wing, active aero, and sidepods</strong>, and on MIT's Sustainable Engine Team I'm the <strong>turbine team's responsible engineer</strong>. At the Wright Brothers Wind Tunnel, I'm implementing wall-interference and blockage corrections.</p>
       <div class="cta">
         <a class="btn btn-primary" href="docs/Eduardo_Cavazos_Quintero_Resume.pdf" target="_blank" rel="noopener">Résumé (PDF)</a>
         <a class="btn" href="#work">See my work</a>
@@ -394,7 +447,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 2
       <dl class="facts">
         <div><dt>Studying</dt><dd>B.S. Aerospace Engineering, MIT, 2029</dd></div>
         <div><dt>GPA</dt><dd class="num">4.75 / 5.0</dd></div>
-        <div><dt>Looking for</dt><dd>Summer 2027 internships in aero, CFD, and FEA</dd></div>
+        <div><dt>Looking for</dt><dd>Summer 2027 internships in aero, CFD, FEA, and propulsion</dd></div>
         <div><dt>Languages</dt><dd>English and Spanish, native</dd></div>
       </dl>
     </div>
@@ -409,9 +462,11 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 2
   <div class="wrap">
     <h2 class="sr" id="hl-title">Highlights</h2>
     <ul>
-      <li><b>Radiator CFD</b>Showed our stock radiator core rejects <span class="m">2.89&nbsp;kW</span> against the <span class="m">2.34&nbsp;kW</span> requirement, a <span class="m">24%</span> margin that justified a thinner core saving <span class="m">0.5&nbsp;kg</span> in total, by building a STAR-CCM+ model validated against the radiator's <span class="m">93&nbsp;Pa</span> air-side and <span class="m">5.1&nbsp;kPa</span> coolant-side pressure drops.</li>
+      <li><b>Rear wing</b>Raised 2D rear-wing downforce <span class="m">9%</span> (<span class="m">328 → 358&nbsp;N/m</span>) for <span class="m">3%</span> more drag, lifting L/D from <span class="m">16.5</span> to <span class="m">17.4</span>, by repositioning the five elements inside the existing endplate and comparing both layouts in 2D RANS CFD.</li>
+      <li><b>Radiator CFD</b>Showed our stock radiator core rejects <span class="m">2.89&nbsp;kW</span> against the <span class="m">2.34&nbsp;kW</span> requirement, a <span class="m">24%</span> margin that justified an <span class="m">8&nbsp;mm</span> thinner core saving <span class="m">0.5&nbsp;kg</span> in total, by building a STAR-CCM+ model validated against the radiator's <span class="m">93&nbsp;Pa</span> air-side and <span class="m">5.1&nbsp;kPa</span> coolant-side pressure drops.</li>
+      <li><b>Gas turbine</b>Caught <span class="m">5 issues</span> in our turbine's mean-line worksheet, including a stator hub exit Mach of <span class="m">0.976</span> over the <span class="m">0.95</span> limit (the sheet showed <span class="m">0.952</span>), by writing a MATLAB check that rebuilds the stage and matches its velocity triangles to within <span class="m">0.01%</span>.</li>
+      <li><b>Active aero</b>Took the MY27 active front wing through its concept review: <span class="m">23</span> functional requirements, a breakdown of <span class="m">60+</span> FSAE 2027 rules, a rod linkage chosen over belts and pulleys, and a budget of about <span class="m">$180</span> and <span class="m">0.4&nbsp;kg</span> on the wing.</li>
       <li><b>MY27 aero package</b>Scoped a full aero redesign toward <span class="m">C<sub>L</sub>A 4.0&nbsp;±&nbsp;0.2&nbsp;m²</span>, <span class="m">C<sub>D</sub>A 1.3&nbsp;±&nbsp;0.1&nbsp;m²</span>, and a <span class="m">42/58</span> front/rear balance within a <span class="m">14.22&nbsp;kg</span>, <span class="m">$4,100</span> budget, by directing the aero team's design meetings and checking each change against the FSAE 2027 rules.</li>
-      <li><b>Team training</b>Trained the full aero team on STAR-CCM+ and am onboarding <span class="m">7 new members</span>, using a rear-wing case I built (<span class="m">3.43&nbsp;million cells</span>) that runs from CAD import through meshing to surface pressure.</li>
       <li><b>Wind tunnel research</b>Implementing wall-interference and blockage corrections in MATLAB and XFOIL at MIT's Wright Brothers Wind Tunnel, and leading my own airfoil study that compares predicted and measured lift, drag, and pressure across <span class="m">10–15</span> angles of attack.</li>
     </ul>
   </div>
@@ -422,6 +477,16 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 2
     <div class="sec-head">
       <h2 id="work-title">Selected work</h2>
       <p class="lede">Most of this is from MIT Motorsports, where our aero team is designing the MY27 car. When a number is a design target rather than a result, it's labeled as one.</p>
+      <nav class="toc" aria-label="Projects">
+        <a href="#archdr">Aero architecture</a>
+        <a href="#rearwing">Rear wing study</a>
+        <a href="#activeaero">Active aero</a>
+        <a href="#radiator">Radiator model</a>
+        <a href="#sidepods">Sidepods</a>
+        <a href="#training">CFD training case</a>
+        <a href="#turbine">Turbine stage</a>
+        <a href="#tunnel">Wind tunnel corrections</a>
+      </nav>
     </div>
 
     <!-- ===================== ArchDR + MY26 baseline ===================== -->
@@ -509,6 +574,114 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 2
       </div>
     </article>
 
+    <!-- ===================== Rear wing 2D element study ===================== -->
+    <article class="sheet" id="rearwing" aria-labelledby="rearwing-title">
+      <div class="sheet-head">
+        <div>
+          <h3 id="rearwing-title">MY27 rear wing element study</h3>
+          <p class="sheet-sub">MIT Motorsports, rear wing, 2D CFD, 2026</p>
+        </div>
+      </div>
+      <dl class="tb">
+        <div><dt>My role</dt><dd>Rear wing responsible engineer; ran the CFD</dd></div>
+        <div><dt>Method</dt><dd>2D RANS, k-ω SST, 15&nbsp;m/s</dd></div>
+        <div><dt>Elements</dt><dd>5: an S1223RTL main and four S1223 elements</dd></div>
+        <div><dt>Constraint</dt><dd>Fits inside the MY26 endplate</dd></div>
+        <div><dt>Status</dt><dd>Proposal for MY27</dd></div>
+      </dl>
+      <div class="targets">
+        <dl>
+          <div><dt>Downforce</dt><dd>358<small>N/m, from 328</small></dd></div>
+          <div><dt>Drag</dt><dd>20.5<small>N/m, from 19.9</small></dd></div>
+          <div><dt>Lift-to-drag</dt><dd>17.4<small>from 16.5</small></dd></div>
+          <div><dt>Trade</dt><dd><span class="nw">+9% / +3%</span><small>downforce / drag</small></dd></div>
+        </dl>
+        <p>2D CFD results per meter of span at 15&nbsp;m/s, MY27 proposal against MY26.</p>
+      </div>
+      <div class="sheet-grid">
+        <ul class="xyz">
+          <li>Raised 2D rear-wing downforce <span class="m">9%</span> (<span class="m">328 → 358&nbsp;N/m</span>) for <span class="m">3%</span> more drag, lifting L/D from <span class="m">16.5</span> to <span class="m">17.4</span>, by repositioning the five elements inside the existing MY26 endplate and comparing both layouts in 2D RANS (k-ω SST) at <span class="m">15&nbsp;m/s</span>.</li>
+          <li>Traced the gain element by element: the main element and first lower flap add about <span class="m">17</span> and <span class="m">11&nbsp;N/m</span>, nearly all of the <span class="m">30&nbsp;N/m</span> gain, while the upper flap gives about <span class="m">5&nbsp;N/m</span> back.</li>
+          <li>Specified the proposal as a table of airfoil, chord, angle, and leading-edge position for all <span class="m">5 elements</span>, referenced to the car's STL origin.</li>
+        </ul>
+        <div class="context">
+          <p>Downforce costs drag. This proposal stays inside the MY26 endplate and buys 30&nbsp;N/m of downforce for 0.6&nbsp;N/m of drag.</p>
+          <p>A 2D section isolates the element layout, which makes it a fast first screen before 3D runs with the endplates and the rest of the car.</p>
+        </div>
+      </div>
+      <div class="figs" data-gallery>
+        <div class="row">
+          <figure style="--ar:2.237"><button class="zoom" type="button" aria-label="Enlarge: Velocity magnitude at 15 m/s around MY26 (left) and the MY27 proposal (right)"><img src="assets/img/rw2d_contours.webp" width="868" height="388" alt="Two 2D velocity contour plots of the five-element rear wing, MY26 and the MY27 proposal, with slow flow in blue and fast flow in orange and red" loading="lazy" decoding="async"></button><figcaption>Velocity magnitude at 15 m/s around MY26 (left) and the MY27 proposal (right)</figcaption></figure>
+          <figure style="--ar:1.455"><button class="zoom" type="button" aria-label="Enlarge: MY27 elements in color inside the MY26 endplate; dotted outlines are the MY26 elements"><img src="assets/img/rw2d_overlay.webp" width="416" height="286" alt="Overlay of the five MY27 rear wing elements, labeled E0 to E4, on the dotted MY26 elements inside the endplate outline" loading="lazy" decoding="async"></button><figcaption>MY27 elements in color inside the MY26 endplate; dotted outlines are the MY26 elements</figcaption></figure>
+        </div>
+        <div class="pair">
+          <figure style="--ar:2.019"><button class="zoom" type="button" aria-label="Enlarge: 2D downforce per element, MY26 against the MY27 proposal"><img src="assets/img/rw2d_bars.webp" width="864" height="428" alt="Bar chart of downforce per element for MY26 and the MY27 proposal; the main element and first lower flap gain the most" loading="lazy" decoding="async"></button><figcaption>2D downforce per element, MY26 against the MY27 proposal</figcaption></figure>
+          <div class="table-wrap">
+            <table class="data elements">
+              <caption>MY27 element layout. s is distance downstream of the car's STL origin, u is height, and a positive angle means trailing edge up.</caption>
+              <thead><tr><th scope="col">Element</th><th scope="col">Airfoil</th><th scope="col" class="n">Chord, mm</th><th scope="col" class="n">Angle, °</th><th scope="col" class="n">LE s, mm</th><th scope="col" class="n">LE u, mm</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">E0 main</th><td>S1223RTL</td><td class="n">450</td><td class="n">0</td><td class="n">−293.0</td><td class="n">852.1</td></tr>
+                <tr><th scope="row">E1 lower flap 1</th><td>S1223</td><td class="n">228</td><td class="n">33</td><td class="n">146.0</td><td class="n">874.6</td></tr>
+                <tr><th scope="row">E2 lower flap 2</th><td>S1223</td><td class="n">142</td><td class="n">58</td><td class="n">321.5</td><td class="n">1008.3</td></tr>
+                <tr><th scope="row">E3 upper front</th><td>S1223</td><td class="n">200</td><td class="n">6</td><td class="n">−120.0</td><td class="n">1030.1</td></tr>
+                <tr><th scope="row">E4 upper flap</th><td>S1223</td><td class="n">160</td><td class="n">30</td><td class="n">71.3</td><td class="n">1066.0</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- ===================== Active aero CoDR ===================== -->
+    <article class="sheet" id="activeaero" aria-labelledby="activeaero-title">
+      <div class="sheet-head">
+        <div>
+          <h3 id="activeaero-title">Active aero concept design review</h3>
+          <p class="sheet-sub">MIT Motorsports, MY27 front wing, October 17, 2026</p>
+        </div>
+        <div class="links"><a class="btn" href="docs/MY27_Active_Aero_CoDR_excerpt.pdf" target="_blank" rel="noopener">CoDR excerpt (PDF, 17 slides)</a></div>
+      </div>
+      <dl class="tb">
+        <div><dt>My role</dt><dd>Responsible engineer, active aero</dd></div>
+        <div><dt>Presented by</dt><dd>Me and 2 teammates</dd></div>
+        <div><dt>System</dt><dd>Servo-driven front-wing flaps, one servo per side</dd></div>
+        <div><dt>Chosen concept</dt><dd>Rod linkage</dd></div>
+        <div><dt>Next gates</dt><dd>Preliminary, then fabrication design review</dd></div>
+      </dl>
+      <div class="targets">
+        <dl>
+          <div><dt>Flap response</dt><dd>≤ 0.2 s<small>target 0.1</small></dd></div>
+          <div><dt>Positioning</dt><dd>±5°<small>target ±3°</small></dd></div>
+          <div><dt>Repeatability</dt><dd>≤ 0.5°<small>peak to peak</small></dd></div>
+          <div><dt>Durability</dt><dd>≥ 1,000<small>cycles</small></dd></div>
+          <div><dt>Actuator mass</dt><dd>≤ 0.5 kg<small>target 0.3</small></dd></div>
+          <div><dt>Power draw</dt><dd>≤ 20 W<small>peak</small></dd></div>
+        </dl>
+        <p>Functional requirements from the CoDR. These are design targets, not test results.</p>
+      </div>
+      <div class="sheet-grid">
+        <ul class="xyz">
+          <li>Set <span class="m">23 functional requirements</span> and broke down the <span class="m">60+</span> FSAE 2027 rules that apply, so every flap position stays inside the front-wing envelope (no more than <span class="m">700&nbsp;mm</span> ahead of the front tires or <span class="m">500&nbsp;mm</span> high) and is designed to pass the inspectors' <span class="m">200&nbsp;N</span> push test.</li>
+          <li>Compared <span class="m">3 mounting locations</span> and <span class="m">2 linkage types</span> with the team, scored two of the mounts side by side on <span class="m">8 criteria</span> from wing removal to flap slop and EE wiring, and chose a rod linkage for its lower mass, power draw, and complexity.</li>
+          <li>Budgeted the system at about <span class="m">$180</span> and <span class="m">0.4&nbsp;kg</span> on the wing (<span class="m">1.42&nbsp;kg</span> with the wiring harness) with two <span class="m">35&nbsp;kg·cm</span> servos, and designed it to fail safe: the flaps default to the high-downforce position, hard stops cap their travel, and a Feb&nbsp;19 go/no-go keeps the wing passive if it isn't track-ready.</li>
+        </ul>
+        <div class="context">
+          <p>Active aero lets a wing change on track: more downforce in corners, less drag on straights. For MY27 the team chose the front wing, where moving a flap shifts the car's center of pressure, which helps new drivers. A servo on each side moves the flaps based on speed, steering, throttle, and brake.</p>
+          <p>MIT Motorsports hasn't run active aero on a car before. The review builds on earlier attempts: MY25's rear-wing flaps used an untested servo and a cable that bent too tightly at its pulley, and MY26's design lost more downforce than it saved in drag.</p>
+          <p>Next, the team will pick the best aero balance for each corner from a yaw moment diagram, then use CFD to find the flap angle that hits it.</p>
+        </div>
+      </div>
+      <div class="slides" data-gallery>
+        <figure><button class="zoom" type="button" aria-label="Enlarge: System overview: what active aero does, and its fail-safe"><img src="assets/img/thumb/aa-3.webp" data-full="assets/img/aa-3.webp" width="800" height="450" alt="CoDR slide explaining active aero, with a CFD image of the front wing" loading="lazy" decoding="async"></button><figcaption>System overview: what active aero does, and its fail-safe</figcaption></figure>
+        <figure><button class="zoom" type="button" aria-label="Enlarge: The flaps at low and high speed, front view"><img src="assets/img/thumb/aa-29.webp" data-full="assets/img/aa-29.webp" width="800" height="450" alt="CoDR slide with front-view sketches of the MY26 wing and the concept&#x27;s flap positions at low and high speed" loading="lazy" decoding="async"></button><figcaption>The flaps at low and high speed, front view</figcaption></figure>
+        <figure><button class="zoom" type="button" aria-label="Enlarge: Chosen concept: rod linkage, section view"><img src="assets/img/thumb/aa-25.webp" data-full="assets/img/aa-25.webp" width="800" height="450" alt="CoDR slide with a hand sketch of the rod linkage driving the flaps from a servo" loading="lazy" decoding="async"></button><figcaption>Chosen concept: rod linkage, section view</figcaption></figure>
+        <figure><button class="zoom" type="button" aria-label="Enlarge: Servo hand calcs and mounting"><img src="assets/img/thumb/aa-21.webp" data-full="assets/img/aa-21.webp" width="800" height="450" alt="CoDR slide with a dimensioned hand drawing of the servo mount and the servo&#x27;s torque table" loading="lazy" decoding="async"></button><figcaption>Servo hand calcs and mounting</figcaption></figure>
+        <figure><button class="zoom" type="button" aria-label="Enlarge: Front-wing envelope requirements, traced to FSAE rules"><img src="assets/img/thumb/aa-9.webp" data-full="assets/img/aa-9.webp" width="800" height="450" alt="CoDR table of front-wing envelope requirements with targets and FSAE rule sources" loading="lazy" decoding="async"></button><figcaption>Front-wing envelope requirements, traced to FSAE rules</figcaption></figure>
+        <figure><button class="zoom" type="button" aria-label="Enlarge: Target mass breakdown by part"><img src="assets/img/thumb/aa-14.webp" data-full="assets/img/aa-14.webp" width="800" height="450" alt="CoDR pie chart of the active aero mass target by part, led by the servos" loading="lazy" decoding="async"></button><figcaption>Target mass breakdown by part</figcaption></figure>
+      </div>
+    </article>
+
     <!-- ===================== Radiator model ===================== -->
     <article class="sheet" id="radiator" aria-labelledby="radiator-title">
       <div class="sheet-head">
@@ -527,7 +700,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 2
       <div class="sheet-grid">
         <ul class="xyz">
           <li>Validated the model against the radiator's air-side and coolant-side pressure drops (<span class="m">93&nbsp;Pa</span> and <span class="m">5.1&nbsp;kPa</span>) and its outlet temperatures, by modeling the core as coupled air and coolant porous regions between inlet and outlet ducts and tanks.</li>
-          <li>Showed the stock core rejects <span class="m">2.89&nbsp;kW</span> against the <span class="m">2.34&nbsp;kW</span> worst-case requirement, a <span class="m">24%</span> margin, which justified a thinner core that saves <span class="m">0.5&nbsp;kg</span> in total.</li>
+          <li>Showed the stock core rejects <span class="m">2.89&nbsp;kW</span> against the <span class="m">2.34&nbsp;kW</span> worst-case requirement, a <span class="m">24%</span> margin, which justified cutting the core <span class="m">8&nbsp;mm</span> thinner to save <span class="m">0.5&nbsp;kg</span> in total.</li>
           <li>Set the sidepods' air requirement at <span class="m">0.17&nbsp;kg/s</span> per core (at a <span class="m">3.4&nbsp;m/s</span> face velocity) from the same simulation.</li>
         </ul>
         <div class="context">
@@ -610,6 +783,154 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 2
         <div class="row">
           <figure style="--ar:1.287"><button class="zoom" type="button" aria-label="Enlarge: The rear-wing assembly in STAR-CCM+&#x27;s 3D-CAD environment, 11 bodies"><img src="assets/img/rw_cad.webp" width="578" height="449" alt="Rear wing CAD with three elements, slotted endplates, and two pylons, shown in STAR-CCM+" loading="lazy" decoding="async"></button><figcaption>The rear-wing assembly in STAR-CCM+'s 3D-CAD environment, 11 bodies</figcaption></figure>
           <figure style="--ar:0.985"><button class="zoom" type="button" aria-label="Enlarge: Surface pressure on the wing elements, endplate, and pylon"><img src="assets/img/rw_cp.webp" width="467" height="474" alt="Surface pressure contour on the rear wing elements, endplate, and pylon" loading="lazy" decoding="async"></button><figcaption>Surface pressure on the wing elements, endplate, and pylon</figcaption></figure>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="sec" id="turbine-tunnel" aria-labelledby="tt-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="tt-title">Turbine and wind tunnel</h2>
+      <p class="lede">Two projects off the car: the turbine stage for MIT's student gas-turbine team, and wall corrections at the Wright Brothers Wind Tunnel.</p>
+    </div>
+
+    <!-- ===================== SET turbine ===================== -->
+    <article class="sheet" id="turbine" aria-labelledby="turbine-title">
+      <div class="sheet-head">
+        <div>
+          <h3 id="turbine-title">Turbine stage: worksheet check, rotor CAD, blade FEA</h3>
+          <p class="sheet-sub">MIT Sustainable Engine Team (SET), turbine team, October 2026</p>
+        </div>
+      </div>
+      <dl class="tb">
+        <div><dt>My role</dt><dd>Turbine team responsible engineer</dd></div>
+        <div><dt>Stage</dt><dd>Single-stage axial, 24 stator and 27 rotor blades</dd></div>
+        <div><dt>Job</dt><dd>Drive a 24&nbsp;kW compressor at 159,000&nbsp;rpm</dd></div>
+        <div><dt>Inlet</dt><dd>0.1285&nbsp;kg/s at 1033&nbsp;K and 366.7&nbsp;kPa</dd></div>
+        <div><dt>Tools</dt><dd>MATLAB, Onshape, ANSYS Mechanical</dd></div>
+      </dl>
+      <div class="sheet-grid">
+        <ul class="xyz">
+          <li>Caught <span class="m">5 issues</span> in the team's mean-line turbine worksheet, <span class="m">3</span> calculation errors and <span class="m">2</span> design risks, by writing a MATLAB check that rebuilds the stage from the sheet's inputs and matches its velocity triangles to within <span class="m">0.01%</span>.</li>
+          <li>Showed the stator hub exit Mach is <span class="m">0.976</span>, over the team's <span class="m">0.95</span> limit, not the <span class="m">0.952</span> the sheet reports, by computing Mach at each radius from that radius's own static temperature instead of the mean.</li>
+          <li>Found both blade rows outside the <span class="m">0.75–0.85</span> Zweifel loading band (stator <span class="m">0.90</span>, rotor <span class="m">0.58</span>) and the 24/27 blade counts sharing a factor of 3, a forced-response risk, then swept blade count to find <span class="m">4 pairs</span>, such as <span class="m">27/20</span>, that fix both to first order.</li>
+          <li>Modeled the bladed rotor in Onshape with an <span class="m">M8&nbsp;×&nbsp;1.0</span> threaded hub, and ran a first-pass ANSYS FEA of one Haynes 230 blade under <span class="m">100–500&nbsp;kPa</span> gas loads from <span class="m">27</span> to <span class="m">702&nbsp;°C</span>: peak von Mises stress of <span class="m">30.9&nbsp;MPa</span>, about <span class="m">9×</span> below the roughly <span class="m">270&nbsp;MPa</span> yield at 650&nbsp;°C under gas loads alone.</li>
+        </ul>
+        <div class="context">
+          <p>SET is MIT's student gas-turbine team. Its turbine is a single stage that takes 0.1285&nbsp;kg/s of 1033&nbsp;K gas and extracts the 24&nbsp;kW that spins the compressor at 159,000&nbsp;rpm. The team's mean-line worksheet sizes the stage's velocity triangles, flow path, and blade losses for a predicted 80% efficiency.</p>
+          <p>A mean-line sheet can break quietly: one cell uses the wrong temperature or radius, and every number downstream still looks plausible. The check is built to catch that, and it can be rerun as the design changes.</p>
+        </div>
+      </div>
+
+      <div class="part-head">
+        <h4>Worksheet check in MATLAB</h4>
+        <p>The script reads each input from a named worksheet cell, recomputes the mean line, the hub-to-tip velocity triangles, the stator exit state, and the blade loading, then compares each result with the worksheet's own output.</p>
+      </div>
+      <div class="table-wrap">
+        <table class="data">
+          <caption>What the check found. Blade-count options are first-order, at fixed axial chord; the losses have to be rerun in the worksheet for any new count.</caption>
+          <thead><tr><th scope="col">Finding</th><th scope="col">Worksheet</th><th scope="col">MATLAB check</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Stator hub exit Mach, limit 0.95</th><td>0.952, from the mean static temperature</td><td><b class="hi">0.976</b>, from the hub's own 888&nbsp;K</td></tr>
+            <tr><th scope="row">Stator exit static temperature</th><td>935&nbsp;K, mixing two c<sub>p</sub> values</td><td>921–923&nbsp;K with one c<sub>p</sub></td></tr>
+            <tr><th scope="row">Rotor tip inlet relative angle</th><td>−5.3°, mixing two radii</td><td>−0.9° at one radius</td></tr>
+            <tr><th scope="row">Zweifel loading, target 0.75–0.85</th><td>Stator 0.90, rotor 0.57</td><td>In band at 26–28 stator and 19–20 rotor blades</td></tr>
+            <tr><th scope="row">Blade counts</th><td>24 and 27 share a factor of 3 (forced-response risk)</td><td>In band with no common factor: 26/19, 27/19, 27/20, 28/19</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="figs" data-gallery>
+        <div class="row">
+          <figure style="--ar:2.043"><button class="zoom" type="button" aria-label="Enlarge: Stator exit Mach and static temperature from hub to tip. With each radius&#x27;s own static temperature, the hub reaches Mach 0.976."><img src="assets/img/set_mach.webp" width="1600" height="783" alt="Two MATLAB plots against span: stator exit Mach number, where the local-temperature curve starts at 0.976 above the 0.95 limit, and static temperature, which rises from 888 K at the hub" loading="lazy" decoding="async"></button><figcaption>Stator exit Mach and static temperature from hub to tip. With each radius's own static temperature, the hub reaches Mach 0.976.</figcaption></figure>
+          <figure style="--ar:1.383"><button class="zoom" type="button" aria-label="Enlarge: Zweifel loading against blade count at fixed axial chord. The current 24 stator and 27 rotor blades sit outside the 0.75–0.85 band."><img src="assets/img/set_zweifel.webp" width="1600" height="1157" alt="MATLAB plot of Zweifel coefficient against number of blades for the stator and rotor, with the current design points marked outside the target band" loading="lazy" decoding="async"></button><figcaption>Zweifel loading against blade count at fixed axial chord. The current 24 stator and 27 rotor blades sit outside the 0.75–0.85 band.</figcaption></figure>
+        </div>
+        <div class="row">
+          <figure style="--ar:1.183"><button class="zoom" type="button" aria-label="Enlarge: Rotor velocity triangles at hub, mean, and tip. At the tip inlet, the worksheet&#x27;s dashed vector comes from mixing two radii."><img src="assets/img/set_triangles.webp" width="1600" height="1352" alt="Six MATLAB velocity-triangle plots for the rotor inlet and exit at hub, mean, and tip, showing absolute, relative, and blade velocities" loading="lazy" decoding="async"></button><figcaption>Rotor velocity triangles at hub, mean, and tip. At the tip inlet, the worksheet's dashed vector comes from mixing two radii.</figcaption></figure>
+          <figure style="--ar:1.228"><button class="zoom" type="button" aria-label="Enlarge: Loss breakdown from the worksheet&#x27;s loss model: tip leakage is 81% of the rotor&#x27;s loss coefficient of 0.346."><img src="assets/img/set_losses.webp" width="1600" height="1303" alt="Stacked bar chart of loss coefficients: stator 0.069 total, rotor 0.346 total, mostly tip leakage" loading="lazy" decoding="async"></button><figcaption>Loss breakdown from the worksheet's loss model: tip leakage is 81% of the rotor's loss coefficient of 0.346.</figcaption></figure>
+        </div>
+      </div>
+
+      <div class="part-head">
+        <h4>Rotor CAD and blade FEA</h4>
+        <p>The rotor is a bladed disk in Onshape with an M8 × 1.0 threaded hub, 15&nbsp;mm deep, for the shaft; airfoil blades from the worksheet's metal angles come next. For the FEA, one blade is a 10 × 5 × 2&nbsp;mm Haynes 230 bar fixed at the root, with 500&nbsp;kPa on one face and 100&nbsp;kPa on the other four, swept from 27 to 702&nbsp;°C in 15 steps. This first pass carries gas loads only; the centrifugal load at 159,000&nbsp;rpm is the next step.</p>
+      </div>
+      <div class="figs" data-gallery>
+        <div class="row">
+          <figure style="--ar:1.479"><button class="zoom" type="button" aria-label="Enlarge: Rotor in Onshape: a bladed disk with an M8 × 1.0 threaded hub, 15 mm deep. The blades are still blocks."><img src="assets/img/set_cad.webp" width="920" height="622" alt="Onshape model of the turbine rotor, a disk ringed with rectangular blades and a central threaded bore, beside its feature tree" loading="lazy" decoding="async"></button><figcaption>Rotor in Onshape: a bladed disk with an M8 × 1.0 threaded hub, 15 mm deep. The blades are still blocks.</figcaption></figure>
+          <figure style="--ar:2.045"><button class="zoom" type="button" aria-label="Enlarge: Von Mises stress: 30.9 MPa peak, at the root"><img src="assets/img/fea_vm.webp" width="540" height="264" alt="ANSYS contour of von Mises stress on the blade bar, highest near the fixed root" loading="lazy" decoding="async"></button><figcaption>Von Mises stress: 30.9 MPa peak, at the root</figcaption></figure>
+        </div>
+        <div class="row">
+          <figure style="--ar:2.053"><button class="zoom" type="button" aria-label="Enlarge: Total deformation: 4.3 µm at the tip"><img src="assets/img/fea_def.webp" width="540" height="263" alt="ANSYS contour of total deformation on the blade bar, zero at the fixed root and largest at the free tip" loading="lazy" decoding="async"></button><figcaption>Total deformation: 4.3 µm at the tip</figcaption></figure>
+          <figure style="--ar:2.022"><button class="zoom" type="button" aria-label="Enlarge: Bending stress along the blade: ±38 MPa at the root"><img src="assets/img/fea_sx.webp" width="540" height="267" alt="ANSYS contour of normal stress along the blade, tension on one face and compression on the other near the root" loading="lazy" decoding="async"></button><figcaption>Bending stress along the blade: ±38 MPa at the root</figcaption></figure>
+        </div>
+      </div>
+    </article>
+
+    <!-- ===================== WBWT wall corrections ===================== -->
+    <article class="sheet" id="tunnel" aria-labelledby="tunnel-title">
+      <div class="sheet-head">
+        <div>
+          <h3 id="tunnel-title">Wall corrections for the Wright Brothers Wind Tunnel</h3>
+          <p class="sheet-sub">UROP with Prof. Mark Drela, MIT AeroAstro, since September 2026</p>
+        </div>
+      </div>
+      <dl class="tb">
+        <div><dt>My role</dt><dd>UROP research assistant</dd></div>
+        <div><dt>Test section</dt><dd>Closed, 12 × 7.75 × 18&nbsp;ft, 15–230&nbsp;mph</dd></div>
+        <div><dt>Code</dt><dd>MATLAB and XFOIL, on GitHub, documented in MkDocs</dd></div>
+        <div><dt>Reference</dt><dd>Barlow, Rae &amp; Pope, chapters 9–11</dd></div>
+        <div><dt>Cross-check</dt><dd>Drela, <cite>Flight Vehicle Aerodynamics</cite>, ch. 10</dd></div>
+      </dl>
+      <div class="sheet-grid">
+        <ul class="xyz">
+          <li>Implementing wall-interference and blockage corrections in MATLAB, with XFOIL, to make the force and pressure data the tunnel delivers to industry, research, and student tests more accurate, and documenting the correction code in MkDocs.</li>
+          <li>Marked up the <span class="m">108-page</span> boundary-corrections section of Barlow, Rae &amp; Pope's <cite>Low-Speed Wind Tunnel Testing</cite> for the tunnel's code: <span class="m">275 highlights</span> on <span class="m">82 pages</span>, sorted into procedure (<span class="m">55</span>), equations that apply to the WBWT (<span class="m">137</span>), and validity checks (<span class="m">83</span>), cross-checked against Drela's <cite>Flight Vehicle Aerodynamics</cite>.</li>
+          <li>Collected ready-made unit tests for the correction code from the book's worked examples, including an <span class="m">8 × 12&nbsp;ft</span> tunnel with corner fillets, the closest match to the WBWT in the book.</li>
+          <li>Leading my own airfoil project from CAD through CFD to a tunnel test, to compare predicted and measured lift, drag, and pressure across <span class="m">10–15</span> angles of attack.</li>
+        </ul>
+        <div class="context">
+          <p>Walls change the flow around a model. In a closed test section like the WBWT's, the model and its wake squeeze the flow, so it speeds up around the model, and the walls cut the downwash, so lift reads high and drag reads low. Classical corrections estimate each effect separately and add them up.</p>
+          <p>The open question for the WBWT is its corner fillets. The book's image methods model a pure rectangle, so the code will need either a panel model of the real section or a measured check.</p>
+        </div>
+      </div>
+      <div class="pair pair-draw">
+        <figure class="drawing">
+          <svg viewBox="0 0 600 410" role="img" aria-labelledby="wbwt-t wbwt-d">
+            <title id="wbwt-t">WBWT test section, looking downstream</title>
+            <desc id="wbwt-d">To-scale drawing of the closed test section: 12 feet wide and 7.75 feet high, with corner fillets that taper from 14 inches at the entry to 10 inches at the exit, for a flow area of about 90 square feet. A model's span should stay under about 0.8 of the width, 9.6 feet.</desc>
+            <polygon class="w-fillet" points="28,60 70,60 28,102"/>
+            <polygon class="w-fillet" points="460,60 418,60 460,102"/>
+            <polygon class="w-fillet" points="460,339 418,339 460,297"/>
+            <polygon class="w-fillet" points="28,339 70,339 28,297"/>
+            <polygon class="w-area" points="70,60 418,60 460,102 460,297 418,339 70,339 28,297 28,102"/>
+            <path class="w-exit" d="M28 90L58 60M430 60L460 90M460 309L430 339M58 339L28 309"/>
+            <path class="w-cl" d="M18 199.5H470M244 50V349"/>
+            <rect class="w-model" x="114.4" y="197" width="259.2" height="5" rx="2.5"/>
+            <path class="w-span-x" d="M71.2 140V212M416.8 140V212"/>
+            <path class="w-span" d="M71.2 150H416.8M71.2 143V157M416.8 143V157"/>
+            <text class="w-acc w-halo" x="244" y="132" text-anchor="middle">Max model span 9.6 ft (0.8 × width)</text>
+            <text class="w-big w-halo" x="244" y="284" text-anchor="middle">C ≈ 90 ft²</text>
+            <path class="w-dim" d="M28 344V376M460 344V376M28 368H460M465 60H490M465 339H490M482 60V339"/>
+            <text x="244" y="400" text-anchor="middle">12 ft</text>
+            <text x="494" y="206">7.75 ft</text>
+            <text x="28" y="40">Fillets: 14 in at entry, 10 in at exit (dashed)</text>
+          </svg>
+          <figcaption>WBWT test section looking downstream, to scale, drawn from the tunnel's published specifications. The corner fillets taper along the 18&nbsp;ft section, opening the flow area slightly to offset wall boundary-layer growth.</figcaption>
+        </figure>
+        <div class="table-wrap">
+          <table class="data">
+            <caption>What the corrections fix in a closed test section</caption>
+            <thead><tr><th scope="col">Effect</th><th scope="col">What it does</th><th scope="col">Corrected through</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Solid blockage</th><td>The model's volume speeds up the flow around it</td><td>ε<sub>sb</sub>, raises dynamic pressure</td></tr>
+              <tr><th scope="row">Wake blockage</th><td>The wake does the same and adds drag</td><td>ε<sub>wb</sub>, raises dynamic pressure</td></tr>
+              <tr><th scope="row">Streamline curvature</th><td>The model acts more cambered, so lift, moment, and angle read high</td><td>Δα, ΔC<sub>L</sub>, ΔC<sub>m</sub></td></tr>
+              <tr><th scope="row">Lift interference</th><td>The walls cut the downwash, so lift reads high and drag low</td><td><span class="nw">Δα = δ(S/C)C<sub>L</sub></span><br><span class="nw">ΔC<sub>D</sub> = δ(S/C)C<sub>L</sub>²</span></td></tr>
+              <tr><th scope="row">Buoyancy</th><td>A pressure gradient along the section pushes on the model</td><td>The tunnel's centerline static survey</td></tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </article>
@@ -764,21 +1085,36 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 2
         <div>
           <h4>Aerodynamics responsible engineer: rear wing, active aero, sidepods</h4>
           <ul>
-            <li>Built and validated a STAR-CCM+ radiator model against 93&nbsp;Pa air-side and 5.1&nbsp;kPa coolant-side pressure drops; it showed a 24% heat-rejection margin over the 2.34&nbsp;kW requirement and justified a thinner core that saves 0.5&nbsp;kg in total.</li>
+            <li>Built and validated a STAR-CCM+ radiator model against 93&nbsp;Pa air-side and 5.1&nbsp;kPa coolant-side pressure drops; it showed a 24% heat-rejection margin over the 2.34&nbsp;kW requirement and justified an 8&nbsp;mm thinner core that saves 0.5&nbsp;kg in total.</li>
             <li>Direct the MY27 aero package team's design meetings, scoping a full redesign toward C<sub>L</sub>A 4.0&nbsp;±&nbsp;0.2&nbsp;m², C<sub>D</sub>A 1.3&nbsp;±&nbsp;0.1&nbsp;m², and a 42/58 balance within a 14.22&nbsp;kg, $4,100 budget under the FSAE 2027 rules.</li>
             <li>Trained the full aero team on STAR-CCM+ workflows, and lead onboarding and training for 7 new members.</li>
-            <li>Updating the rear wing, designing new sidepods, and adding active aero, which the team hasn't run before.</li>
+            <li>Updating the rear wing (a 2D layout study shows 9% more downforce for 3% more drag), designing new sidepods, and bringing active aero to the front wing, which the team hasn't run on a car before.</li>
           </ul>
         </div>
       </div>
       <div class="role">
         <p class="when">Aug 2025 – May 2026</p>
         <div>
-          <h4>Composites team member</h4>
+          <h4>Composites team responsible engineer</h4>
           <ul>
             <li>Fabricated carbon-fiber parts for 4 vehicle components (body panels, wing elements, seat shell, battery enclosure), each about 15% lighter than the previous year's, using prepreg and wet layup, vacuum bagging, and bonding.</li>
             <li>Tested carbon-fiber coupons in tension and compression on an Instron at MIT D-Lab to validate layup schedules against design requirements, and supported impact attenuator crush testing.</li>
             <li>Machined 7 molds, tooling fixtures, and parts on manual mills, lathes, and the waterjet, and prepared foam plugs for molds.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="org">
+      <div class="org-head"><h3>MIT Sustainable Engine Team (SET)</h3><p>Student gas-turbine team, Energy Commons</p></div>
+      <div class="role">
+        <p class="when">Oct 2026 – present</p>
+        <div>
+          <h4>Turbine team responsible engineer</h4>
+          <ul>
+            <li>Modeled a bladed-disk turbine rotor with an M8&nbsp;×&nbsp;1.0 threaded hub for the shaft. The stage drives a 24&nbsp;kW compressor at 159,000&nbsp;rpm, and the team's mean-line model sizes its velocity triangles, flow path, and blade losses for 80% efficiency.</li>
+            <li>Built a MATLAB check of the mean-line worksheet that reproduces its velocity triangles and caught 5 issues, including an understated stator hub exit Mach (0.952 in the sheet, 0.976 against a 0.95 limit) and a 24/27 blade count with forced-response risk.</li>
+            <li>Ran a first-pass ANSYS FEA of a Haynes 230 blade under 100–500&nbsp;kPa gas loads from 27 to 702&nbsp;°C, finding peak root bending of ±38&nbsp;MPa and about a 9× margin to yield at 650&nbsp;°C under gas loads alone.</li>
           </ul>
         </div>
       </div>
@@ -791,9 +1127,10 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 2
         <div>
           <h4>UROP research assistant</h4>
           <ul>
-            <li>Implementing wall-interference and blockage corrections in MATLAB, with XFOIL, to improve the accuracy of force and pressure data for industry, research, and student test campaigns.</li>
+            <li>Implementing wall-interference and blockage corrections in MATLAB, with XFOIL and GitHub, to improve the accuracy of force and pressure data for industry, research, and student test campaigns.</li>
             <li>Lead student and industry tunnel projects, from developing and installing their models to post-processing the data.</li>
             <li>Leading an independent airfoil project from CAD through CFD to a tunnel test, comparing predicted and measured lift, drag, and pressure distribution across 10–15 angles of attack.</li>
+            <li>Marked up the boundary-correction chapters of Barlow, Rae &amp; Pope (275 highlights on 82 pages) as the reference for the tunnel's correction code.</li>
           </ul>
         </div>
       </div>
@@ -847,20 +1184,21 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 2
         <h3>Simulation and analysis</h3>
         <ul>
           <li>STAR-CCM+ <small>external aero, porous-media heat exchangers</small></li>
-          <li>ANSYS</li>
+          <li>ANSYS Fluent</li>
+          <li>ANSYS Mechanical <small>static structural FEA</small></li>
           <li>XFOIL</li>
-          <li>Thermal Desktop</li>
-          <li>MATLAB, Python</li>
+          <li>MATLAB, Python <small>mean-line turbine checks</small></li>
           <li>HPC on MIT's Engaging cluster</li>
         </ul>
       </div>
       <div>
-        <h3>CAD and drawings</h3>
+        <h3>CAD, drawings, and code</h3>
         <ul>
           <li>SolidWorks <small>parts, assemblies, drawings</small></li>
-          <li>GD&amp;T</li>
+          <li>Onshape</li>
           <li>Siemens NX and Teamcenter</li>
-          <li>VS Code</li>
+          <li>GD&amp;T</li>
+          <li>GitHub, VS Code, MkDocs</li>
         </ul>
       </div>
       <div>
@@ -933,7 +1271,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 2
     <div class="sec-head"><h2 id="contact-title">Contact</h2></div>
     <div class="contact">
       <div>
-        <p class="lede">I'm looking for summer 2027 internships in aerodynamics, CFD, and FEA, in commercial aerospace, motorsports, or space. Email is the fastest way to reach me.</p>
+        <p class="lede">I'm looking for summer 2027 internships in aerodynamics, CFD, FEA, and propulsion, in aircraft, engines, or motorsports. Email is the fastest way to reach me.</p>
         <div class="email-row" style="margin-top:22px">
           <a class="email" id="email" href="mailto:eddy215@mit.edu">eddy215@mit.edu</a>
           <button class="btn btn-sm" type="button" data-copy="eddy215@mit.edu" aria-controls="email"><span>Copy</span></button>
